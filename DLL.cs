@@ -62,7 +62,7 @@ class Program
         public void print()
         {
             Node i = Root;
-            if (Root == null) Console.WriteLine("В списке студентов нет!");
+            if (Root == null) Console.WriteLine("Р’ СЃРїРёСЃРєРµ СЃС‚СѓРґРµРЅС‚РѕРІ РЅРµС‚!");
             while (i != null)
             {
                 Console.WriteLine(i.Name + " " + i.Mark);
@@ -117,8 +117,8 @@ class Program
                 i = i.Next;
                 count++;
             }
-            if (i == null || i.Name != name) Console.WriteLine("Такого студента в списке нет!");
-            else Console.WriteLine("Студент под номером {0} - {1}, средний балл - {2}", count, i.Name, i.Mark);
+            if (i == null || i.Name != name) Console.WriteLine("РўР°РєРѕРіРѕ СЃС‚СѓРґРµРЅС‚Р° РІ СЃРїРёСЃРєРµ РЅРµС‚!");
+            else Console.WriteLine("РЎС‚СѓРґРµРЅС‚ РїРѕРґ РЅРѕРјРµСЂРѕРј {0} - {1}, СЃСЂРµРґРЅРёР№ Р±Р°Р»Р» - {2}", count, i.Name, i.Mark);
         }
 
         public void remove(String name)
@@ -134,7 +134,7 @@ class Program
                 j = j.Prev;
             }
 
-            if (i.Name != name && j.Name != name) Console.WriteLine("Такого студента в списке нет!");
+            if (i.Name != name && j.Name != name) Console.WriteLine("РўР°РєРѕРіРѕ СЃС‚СѓРґРµРЅС‚Р° РІ СЃРїРёСЃРєРµ РЅРµС‚!");
             else if (i == Root)
             {
                 if (i.Next != null)
@@ -164,12 +164,12 @@ class Program
 
         public void sortName()
         {
-            Console.WriteLine("Здесь будет Ваш код для sortName.");
+            Console.WriteLine("Р—РґРµСЃСЊ Р±СѓРґРµС‚ Р’Р°С€ РєРѕРґ РґР»СЏ sortName.");
         }
 
         public void sortMark()
         {
-            Console.WriteLine("Здесь будет Ваш код для sortMark.");
+            Console.WriteLine("Р—РґРµСЃСЊ Р±СѓРґРµС‚ Р’Р°С€ РєРѕРґ РґР»СЏ sortMark.");
         }
 
     }
@@ -181,15 +181,15 @@ class Program
         Console.Clear();
         Console.WriteLine("Double Linked List created. Possible commands are:");
         Console.WriteLine("----------------------------------------------");
-        Console.WriteLine("a <Фамилия> <Средняя оценка> - добавление нового студента");
-        Console.WriteLine("p - напечатать список");
-        Console.WriteLine("l - вывести длину списка");
-        Console.WriteLine("e - проверить - есть ли студенты в списке");
-        Console.WriteLine("w <Фамилия> <Средняя оценка> - добавление нового студента в конец списка");
-        Console.WriteLine("s <Фамилия> - поиск студента в списке");
-        Console.WriteLine("r <Фамилия> - удаление студента из списка");
-        Console.WriteLine("sn - отсортировать список по фамилиями");
-        Console.WriteLine("sm - отсортировать список по оценкам");
+        Console.WriteLine("a <Р¤Р°РјРёР»РёСЏ> <РЎСЂРµРґРЅСЏСЏ РѕС†РµРЅРєР°> - РґРѕР±Р°РІР»РµРЅРёРµ РЅРѕРІРѕРіРѕ СЃС‚СѓРґРµРЅС‚Р°");
+        Console.WriteLine("p - РЅР°РїРµС‡Р°С‚Р°С‚СЊ СЃРїРёСЃРѕРє");
+        Console.WriteLine("l - РІС‹РІРµСЃС‚Рё РґР»РёРЅСѓ СЃРїРёСЃРєР°");
+        Console.WriteLine("e - РїСЂРѕРІРµСЂРёС‚СЊ - РµСЃС‚СЊ Р»Рё СЃС‚СѓРґРµРЅС‚С‹ РІ СЃРїРёСЃРєРµ");
+        Console.WriteLine("w <Р¤Р°РјРёР»РёСЏ> <РЎСЂРµРґРЅСЏСЏ РѕС†РµРЅРєР°> - РґРѕР±Р°РІР»РµРЅРёРµ РЅРѕРІРѕРіРѕ СЃС‚СѓРґРµРЅС‚Р° РІ РєРѕРЅРµС† СЃРїРёСЃРєР°");
+        Console.WriteLine("s <Р¤Р°РјРёР»РёСЏ> - РїРѕРёСЃРє СЃС‚СѓРґРµРЅС‚Р° РІ СЃРїРёСЃРєРµ");
+        Console.WriteLine("r <Р¤Р°РјРёР»РёСЏ> - СѓРґР°Р»РµРЅРёРµ СЃС‚СѓРґРµРЅС‚Р° РёР· СЃРїРёСЃРєР°");
+        Console.WriteLine("sn - РѕС‚СЃРѕСЂС‚РёСЂРѕРІР°С‚СЊ СЃРїРёСЃРѕРє РїРѕ С„Р°РјРёР»РёСЏРјРё");
+        Console.WriteLine("sm - РѕС‚СЃРѕСЂС‚РёСЂРѕРІР°С‚СЊ СЃРїРёСЃРѕРє РїРѕ РѕС†РµРЅРєР°Рј");
         Console.WriteLine("x - exit");
         Console.WriteLine("----------------------------------------------");
 
@@ -209,7 +209,7 @@ class Program
                     Console.WriteLine(list.length());
                     break;
                 case 'e':
-                    Console.WriteLine("Пуст? -" + list.isEmpty());
+                    Console.WriteLine("РџСѓСЃС‚? -" + list.isEmpty());
                     break;
                 case 'w':
                     list.append(str[1], float.Parse(str[2]));
