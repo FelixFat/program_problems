@@ -10,4 +10,4 @@ Links to tasks:
 * [Task 2078](https://acm.timus.ru/problem.aspx?space=1&num=2078)
 * [Task 2100](https://acm.timus.ru/problem.aspx?space=1&num=2100)
 
-![DLL](/C#/images/DLL.png)
+![DLL](images/DLL.png)
