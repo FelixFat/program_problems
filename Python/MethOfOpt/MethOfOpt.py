@@ -1,3 +1,4 @@
+import random
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -132,8 +133,12 @@ class MOO:
         return x
 
     # Метод градиентного спуска с постоянным шагом
-    def gradient(self):
-        return
+    def gradient(self, x0, e, N):
+        for i in range(0, N):
+            diff = (func(x0 + e) - func(x0)) / e
+            x0 = x0 - e * diff
+
+        return x0
 
 # Функция вариант 22
 def func(x):
@@ -151,12 +156,16 @@ if __name__ == '__main__':
     golden_search = method.golden_section_search(L0 = interval, l = 0.001)
     fibonacci_search = method.fibonacci_search(L0 = interval, l = 0.01, e = 0.01)
 
+    x0 = random.randint(interval[0], interval[1])
+    gradient_search = method.gradient(x0 = x0, e = 0.001, N = 1000)
+
     # Вывод результатов
     print('Interval:', interval,
           '\nUniform search:', uni_search,
           '\nDichotomy search:', dichotomy_search,
           '\nGolden section search:', golden_search,
-          '\nFibonacci search:', fibonacci_search)
+          '\nFibonacci search:', fibonacci_search,
+          '\nGradient search:', gradient_search)
     
     # Вывод графика
     x = np.linspace(interval[0], interval[1], 1000)
