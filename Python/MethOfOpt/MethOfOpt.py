@@ -136,7 +136,7 @@ class MOO:
     def gradient(self, x0, e, N):
         for i in range(0, N):
             diff = (func(x0 + e) - func(x0)) / e
-            x0 = x0 - e * diff
+            x0 = x0 - e * np.sign(diff)
 
         return x0
 
@@ -150,14 +150,14 @@ if __name__ == '__main__':
     method = MOO()
 
     interval = method.svenn(x0 = 0, t = 2)
+    x0 = random.randint(interval[0], interval[1])
+    x = np.linspace(interval[0], interval[1], 1000)
 
     uni_search = method.uniform_search(L0 = interval, N = 1000)
     dichotomy_search = method.dichotomy(L0 = interval, l = 0.001)
     golden_search = method.golden_section_search(L0 = interval, l = 0.001)
     fibonacci_search = method.fibonacci_search(L0 = interval, l = 0.01, e = 0.01)
-
-    x0 = random.randint(interval[0], interval[1])
-    gradient_search = method.gradient(x0 = x0, e = 0.001, N = 1000)
+    gradient_search = method.gradient(x0 = x0, e = 0.01, N = 1000)
 
     # Вывод результатов
     print('Interval:', interval,
@@ -168,9 +168,13 @@ if __name__ == '__main__':
           '\nGradient search:', gradient_search)
     
     # Вывод графика
-    x = np.linspace(interval[0], interval[1], 1000)
+    fig, ax = plt.subplots()
+
+    ax.plot(x, func(x))
+    ax.scatter(2, func(2), c = 'r')
+    plt.text(1.5, func(2) + 5, "Min(func(x)) = 2", fontsize = 10)
+
     plt.xlabel("X")
     plt.ylabel("Y")
-    plt.plot(x, func(x))
     plt.grid()
     plt.show()
