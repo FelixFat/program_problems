@@ -26,12 +26,13 @@ class MOO:
         return L
 
     # Метод равномерного поиска
-    def uniform_search(self, L0, N, min = 1000):
+    def uniform_search(self, L0, N):
         a, b = L0[0], L0[1]
+        min = a
         
         for i in range(1, N + 1):
             x = a + i * (b - a) / (N + 1)
-            if func(x) < min:
+            if func(x) < func(min):
                 min = x
 
         return min
